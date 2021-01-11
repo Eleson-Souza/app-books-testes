@@ -121,7 +121,6 @@ namespace APILivrosTeste.Application
                 bookSearch.PublishingCompanyId= book.PublishingCompanyId;
                 bookSearch.LastPage = book.LastPage;
                 bookSearch.LastChapter = book.LastChapter;
-                bookSearch.CreationDate = book.CreationDate;
                 bookSearch.ChangeDate= DateTime.Now;
 
                 _context.Update(bookSearch);

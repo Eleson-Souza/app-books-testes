@@ -132,7 +132,7 @@ namespace APILivrosTeste.Controllers
                 }
                 else if(response.Status == 500)
                 {
-                    return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+                    return BadRequest(response.Message);
                 }
 
                 return Ok(response.Message);

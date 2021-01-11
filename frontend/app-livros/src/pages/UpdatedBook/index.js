@@ -6,16 +6,25 @@ import { PageContainerCenter } from '../../components/MainComponents';
 import HeaderArea from '../../components/Header/index';
 import './styled.css';
 
-function Updated() {
+function UpdatedBook() {
 
-    const [id, setId] = useState(0);
+    const [id, setId] = useState(null);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [purchaseDate, setPurchaseDate] = useState("");
-    const [numberOfPages, setNumberOfPages] = useState(0);
-    const [numberChapter, setNumberChapter] = useState(0);
-    const [pageCurrent, setPageCurrent] = useState(0);
-    const [dataBook, setDataBook] = useState({});
+    const [numberOfPages, setNumberOfPages] = useState(null);
+    const [numberChapter, setNumberChapter] = useState(null);
+    const [pageCurrent, setPageCurrent] = useState(null);
+
+    function clearFields() {
+        setId("");
+        setTitle("");
+        setDescription("");
+        setPurchaseDate("");
+        setNumberOfPages("");
+        setNumberChapter("");
+        setPageCurrent("");
+    }
 
     async function handleSearchBook(event) {
         try {
@@ -47,6 +56,28 @@ function Updated() {
         }
     }
 
+    async function handleUpdate(event) {
+        event.preventDefault();
+
+        try {
+            let response = await api.put('/book', {
+                Id: id,
+                Title: title,
+                Description: description,
+                NumberOfPages: numberOfPages,
+                PurchaseDate: purchaseDate,
+                LastChapter: numberChapter,
+                LastPage: pageCurrent,                    
+            });
+
+            alert(response.data);
+            clearFields();
+
+        } catch(error) {
+            console.log(error);
+        }
+    }
+
     return (
             <div className="content-page">      
                 <HeaderArea />
@@ -54,7 +85,7 @@ function Updated() {
                     <div className="container">
                         <h3>Atualize um Livro</h3>
 
-                        <form method="POST">
+                        <form method="POST" onSubmit={handleUpdate}>
                             <p>
                                 <label htmlFor="id-book">
                                     ID do livro:
@@ -64,6 +95,7 @@ function Updated() {
                                     name="id-book" 
                                     id="id-book"
                                     onChange={(e) => setId(Number(e.target.value))}
+                                    value={id}
                                 />
                                 <button 
                                     className="btn-search" 
@@ -153,7 +185,7 @@ function Updated() {
                             
                             <div className="buttons">
                                 <button type="submit" className="btn-register">Atualizar</button>
-                                <button className="btn-clear">Limpar</button>
+                                <button className="btn-clear" onClick={clearFields}>Limpar</button>
                             </div>
                         </form>
                     </div>
@@ -162,4 +194,4 @@ function Updated() {
     );
 }
 
-export default Updated;
+export default UpdatedBook;

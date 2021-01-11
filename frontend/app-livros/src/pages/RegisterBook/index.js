@@ -5,7 +5,7 @@ import { PageContainerCenter } from '../../components/MainComponents';
 import HeaderArea from '../../components/Header/index';
 import './styled.css';
 
-function Register() {
+function RegisterBook() {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -117,7 +117,7 @@ function Register() {
                             
                             <div className="buttons">
                                 <button type="submit" className="btn-register">Cadastrar</button>
-                                <button className="btn-clear">Limpar</button>
+                                <button type="reset" className="btn-clear">Limpar</button>
                             </div>
                         </form>
                     </div>
@@ -126,4 +126,4 @@ function Register() {
     );
 }
 
-export default Register;
+export default RegisterBook;

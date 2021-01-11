@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3TABp5Yr1sF03mGKIIEo9s49wQ1PN316LjtQlUlKRrDYoy9qXhzSMwTuNlNNbVfRDchBRaSdR0g2/VmBZJP0uw==",
+  "dgSpecHash": "Rx0HSDUPGeSyAffF5U6bWMfIFJ69JbZEo1ItJ6RUPIECEm3MMQ1eOTEX+jH3iib/6qeF6eWIAdxV/KAS2ZZmOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC3\\Desktop\\www\\APIProdutosTeste\\APIProdutosTeste\\APILivrosTeste.csproj",
+  "projectFilePath": "C:\\Users\\PC3\\Desktop\\www\\api-livros\\backend\\APIProdutosTeste\\APIProdutosTeste\\APILivrosTeste.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC3\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\PC3\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
